@@ -50,6 +50,8 @@ dependencies = [
     "exceptiongroup; python_version < '3.11'",
     "opentelemetry-api>=1.28.0",
     "typing-inspection>=0.4.0",
+    # TODO: remove this before release
+    "aws_sdk_bedrock_runtime>=0.0.2; python_full_version >= '3.12'",
 ]
 
 [tool.hatch.metadata.hooks.uv-dynamic-versioning.optional-dependencies]
@@ -63,6 +65,9 @@ anthropic = ["anthropic>=0.49.0"]
 groq = ["groq>=0.15.0"]
 mistral = ["mistralai>=1.2.5"]
 bedrock = ["boto3>=1.35.74"]
+bedrock-experimental = [
+    "aws_sdk_bedrock_runtime>=0.0.2; python_full_version >= '3.12'",
+]
 # Tools
 duckduckgo = ["duckduckgo-search>=7.0.0"]
 tavily = ["tavily-python>=0.5.0"]
@@ -100,3 +105,7 @@ packages = ["pydantic_ai"]
 
 [tool.uv.sources]
 pydantic-graph = { workspace = true }
+
+# [tool.pyright]
+# venvPath = ".."
+# venv = ".venv"
