@@ -23,6 +23,7 @@ class ModelSettings(TypedDict, total=False):
     * Cohere
     * Mistral
     * Bedrock
+    * MCP Sampling
     """
 
     temperature: float
@@ -139,6 +140,17 @@ class ModelSettings(TypedDict, total=False):
     * Mistral
     * Groq
     * Cohere
+    * Google
+    """
+
+    extra_headers: dict[str, str]
+    """Extra headers to send to the model.
+
+    Supported by:
+
+    * OpenAI
+    * Anthropic
+    * Groq
     """
 
     extra_body: object
